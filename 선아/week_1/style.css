@@ -1,0 +1,98 @@
+/* 1. 기본 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  background-color: #f9f9f9; /* 배경 살짝 깔아줌 */
+}
+
+/* 2. Navbar 전체 정렬 (이게 핵심!) */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* 왼쪽, 중간, 오른쪽으로 쫙 벌려줌 */
+  align-items: center; /* 세로 중앙 정렬 */
+  padding: 0 40px;
+  height: 80px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+/* 3. 왼쪽 로고 */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.navbar__logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 4. 중앙 메뉴 (고양이 친구들, 앱 다운로드) */
+.navbar__menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.navbar__menu-item {
+  font-size: 18px;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+}
+
+/* 📌 "앱 다운로드"만 주황색으로 강조 (사진처럼!) */
+.navbar__menu-item:last-child {
+  color: #FF5A5F; 
+}
+
+/* 5. 오른쪽 언어 섹션 */
+.navbar__lang-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar__lang-label {
+  font-size: 14px;
+  color: #999;
+}
+
+/* 6. KO/EN 버튼 박스 */
+.navbar__lang-group {
+  display: flex;
+  gap: 8px;
+  border: 2px solid #333; /* 검정색 테두리 */
+  padding: 5px 10px;
+  border-radius: 30px;
+}
+
+.navbar__lang-btn {
+  border: none;
+  background: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+/* 📌 KO 버튼 활성화 (주황색 배경) */
+.navbar__lang-btn--active {
+  background-color: #FF5A5F;
+  color: white;
+}
+
+/* 7. 반응형 디자인 (화면 줄어들면 중앙 메뉴 삭제) */
+@media (max-width: 850px) {
+  .navbar__menu {
+    display: none;
+  }
+}
