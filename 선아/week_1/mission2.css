@@ -1,0 +1,100 @@
+/* 1. 기본 설정 (여백 제거 및 박스 크기 계산) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+  }
+  
+  /* 전체 컨테이너를 화면 높이에 딱 맞춤 */
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  /* 2. 상단 섹션 (Flex 사용) */
+  .header-group {
+    display: flex;
+    height: 15vh;
+  }
+  
+  .header-group__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1; /* HEADER와 MENU가 공간을 나눠가짐 */
+  }
+  
+  .header-group__item--dark {
+    background-color: #1a233b; /* 짙은 남색 */
+    flex: 1;
+  }
+  
+  .header-group__item--red {
+    background-color: #ef4b58; /* 빨간색 */
+    flex: 3; /* MENU 쪽을 더 넓게 */
+  }
+  
+  /* 3. HERO 섹션 (Flex 사용) */
+  .hero {
+    height: 35vh;
+    background-color: #5587c6; /* 파란색 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* 4. MAIN 복합 레이아웃 섹션 (Grid 사용!! 핵심 포인트 🍠) */
+  .main-layout {
+    flex: 1; /* 남은 공간 모두 차지 */
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* 가로를 2:1:1 비율로 나눔 */
+  }
+  
+  .main-layout__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .main-layout__box--navy {
+    background-color: #24344d; /* MAIN 박스 */
+  }
+  
+  .main-layout__box--empty {
+    background-color: #ffffff; /* 중간 흰색 공백 */
+  }
+  
+  /* IMAGE와 EXTRA를 세로로 쌓기 위해 Flex 사용 */
+  .main-layout__side-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main-layout__box--light-blue {
+    flex: 1;
+    background-color: #c4e5e9; /* IMAGE 박스 */
+    color: #333;
+  }
+  
+  .main-layout__box--green {
+    flex: 1;
+    background-color: #55bc94; /* EXTRA 박스 */
+  }
+  
+  /* 5. FOOTER 섹션 (Flex 사용) */
+  .footer {
+    height: 12vh;
+    background-color: #fbd160; /* 노란색 */
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
