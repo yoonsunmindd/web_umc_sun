@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Pretendard', sans-serif;
+  font-family: sans-serif;
   background-color: #f9f9f9;
 }
 
@@ -48,7 +48,7 @@ body {
 }
 
 
-.navbar__menu-item:last-child {
+.navbar__menu-item--highlight {
   color: #FF5A5F; 
 }
 
